@@ -13,10 +13,10 @@ const AppError = require('./utils/appError');
 const globalHandleError = require('./controllers/errorController');
 
 const app = express();
+app.use(cors());
 
 // Middlewares
 app.use(helmet());
-app.use(cors());
 if (process.env.NODE_ENV === 'development') {
   app.use(morgan('dev'));
 }
