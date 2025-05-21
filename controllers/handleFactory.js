@@ -7,8 +7,8 @@ exports.getAll = (Model) =>
     const features = new APIFeatures(Model.find(), req.query)
       .filter()
       .sort()
-      .limitFields()
-      .paginate();
+      .limitFields();
+    // .paginate();
     const docs = await features.query;
     res.status(200).json({
       status: 'success',
